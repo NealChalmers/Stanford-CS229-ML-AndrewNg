@@ -711,9 +711,9 @@ def predict(Theta1, Theta2, X):
 
     # ====================== YOUR CODE HERE ======================
     
-    X = np.concatenate([np.zeros((m, 1)),X],axis = 1)
+    X = np.concatenate([np.ones((m, 1)),X],axis = 1)
     out1 = utils.sigmoid(np.dot(X, Theta1.T))
-    out1 = np.concatenate([np.zeros((m,1)), out1], axis = 1)
+    out1 = np.concatenate([np.ones((m,1)), out1], axis = 1)
     out2 = utils.sigmoid(np.dot(out1, Theta2.T))
     p = np.argmax(out2,axis=1)
     
